@@ -32,4 +32,8 @@ public class AssessmentRepository {
         return assessmentDao.getAllAssessments(id);
     }
 
+    public List<Assessment> getAllAssessmentByDate(int id) {
+        return assessmentDao.getAllAssessmentsByDate(id);
+    }
+
 }

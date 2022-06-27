@@ -15,6 +15,8 @@ import java.util.List;
 public class AssessmentViewModel extends AndroidViewModel {
     AssessmentRepository assessmentRepository;
     public MutableLiveData<List<Assessment>> allAssessmentsMutableLiveData = new MutableLiveData<>();
+    public MutableLiveData<List<Assessment>> allAssessmentsByDateMutableLiveData = new MutableLiveData<>();
+
 
     public AssessmentViewModel(@NonNull Application application) {
         super(application);
@@ -67,5 +69,8 @@ public class AssessmentViewModel extends AndroidViewModel {
         allAssessmentsMutableLiveData.postValue(assessmentRepository.getAllAssessments(id));
     }
 
+    public void getAssessmentsByDate(int id) {
+        allAssessmentsByDateMutableLiveData.postValue(assessmentRepository.getAllAssessmentByDate(id));
+    }
 
 }

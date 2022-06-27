@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_viewModuleDetailsFragment_to_moduleListFragment"
             app:destination="@id/moduleListFragment" />
+        <action
+            android:id="@+id/action_viewModuleDetailsFragment_to_graphFragment"
+            app:destination="@id/graphFragment" />
     </fragment>
     <fragment
         android:id="@+id/editModuleFragment"
@@ -92,4 +95,8 @@
             android:id="@+id/action_editModuleAssessmentFragment_to_viewAssessmentDetailsFragment"
             app:destination="@id/viewAssessmentDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/graphFragment"
+        android:name="com.example.my_module_wallet.features.common.GraphFragment"
+        android:label="Assessments Graph" />
 </navigation>

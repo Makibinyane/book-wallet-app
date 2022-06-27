@@ -41,6 +41,7 @@ public class ViewModuleDetailsFragment extends Fragment {
         TextView displayModuleDescriptionTextView = (TextView) requireView().findViewById(R.id.txtDisplayModuleDescription);
 
         Button btnAssessments = (Button) requireView().findViewById(R.id.btnAssessments);
+        Button btnAssessmentsGraph = (Button) requireView().findViewById(R.id.btnAssessmentsGraph);
         CardView cdModuleDetails = (CardView) requireView().findViewById(R.id.cdModuleDetails);
 
         if (getArguments() != null) {
@@ -64,6 +65,13 @@ public class ViewModuleDetailsFragment extends Fragment {
                         showDeleteOrEditDialog(module);
                     }
             });
+
+            btnAssessmentsGraph.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    navigateToAssessmentsGraph(module.getId());
+                }
+            });
         }
     }
 
@@ -71,6 +79,12 @@ public class ViewModuleDetailsFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putInt("moduleId", moduleId);
         Navigation.findNavController(requireView()).navigate(R.id.action_viewModuleDetailsFragment_to_assessmentListFragment, bundle);
+    }
+
+    private void navigateToAssessmentsGraph(int moduleId) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("moduleId", moduleId);
+        Navigation.findNavController(requireView()).navigate(R.id.action_viewModuleDetailsFragment_to_graphFragment, bundle);
     }
 
     private void navigateToEditModuleScreen(Module module) {

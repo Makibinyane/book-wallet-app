@@ -25,4 +25,7 @@ public interface AssessmentDao {
 
     @Query("SELECT * FROM assessment WHERE moduleId = :id ORDER by assessmentName")
     List<Assessment> getAllAssessments(int id);
+
+    @Query("SELECT Assessment.id, moduleId, assessmentName, count(Assessment.id), assessmentDueDate FROM assessment WHERE moduleId = :id GROUP BY assessmentDueDate  ORDER by assessmentDueDate")
+    List<Assessment> getAllAssessmentsByDate(int id);
 }
