@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/module_wallet_nav_graph"
+    app:startDestination="@id/moduleListFragment">
+
+    <fragment
+        android:id="@+id/moduleListFragment"
+        android:name="com.example.my_module_wallet.features.module.ui.ModuleListFragment"
+        tools:layout="@layout/fragment_module_list"
+        android:label="Module List" >
+        <action
+            android:id="@+id/action_moduleListFragment_to_addModuleFragment"
+            app:destination="@id/addModuleFragment" />
+        <action
+            android:id="@+id/action_moduleListFragment_to_viewModuleDetailsFragment"
+            app:destination="@id/viewModuleDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addModuleFragment"
+        android:name="com.example.my_module_wallet.features.module.ui.AddModuleFragment"
+        tools:layout="@layout/fragment_add_module"
+        android:label="Add Module" >
+        <action
+            android:id="@+id/action_addModuleFragment_to_moduleListFragment"
+            app:destination="@id/moduleListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewModuleDetailsFragment"
+        tools:layout="@layout/fragment_view_assessment_details"
+        android:name="com.example.my_module_wallet.features.module.ui.ViewModuleDetailsFragment"
+        android:label="Module Details" >
+        <action
+            android:id="@+id/action_viewModuleDetailsFragment_to_editModuleFragment"
+            app:destination="@id/editModuleFragment" />
+        <action
+            android:id="@+id/action_viewModuleDetailsFragment_to_assessmentListFragment"
+            app:destination="@id/assessmentListFragment" />
+        <action
+            android:id="@+id/action_viewModuleDetailsFragment_to_moduleListFragment"
+            app:destination="@id/moduleListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editModuleFragment"
+        android:name="com.example.my_module_wallet.features.module.ui.EditModuleFragment"
+        tools:layout="@layout/fragment_add_module"
+        android:label="Edit Module" >
+        <action
+            android:id="@+id/action_editModuleFragment_to_viewModuleDetailsFragment"
+            app:destination="@id/viewModuleDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assessmentListFragment"
+        android:name="com.example.my_module_wallet.features.assessment.ui.AssessmentListFragment"
+        tools:layout="@layout/fragment_assessment_list"
+        android:label="Assessment List" >
+        <action
+            android:id="@+id/action_assessmentListFragment_to_addModuleAssessmentFragment"
+            app:destination="@id/addModuleAssessmentFragment" />
+        <action
+            android:id="@+id/action_assessmentListFragment_to_viewAssessmentDetailsFragment"
+            app:destination="@id/viewAssessmentDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addModuleAssessmentFragment"
+        android:name="com.example.my_module_wallet.features.assessment.ui.AddModuleAssessmentFragment"
+        tools:layout="@layout/fragment_add_module_assessment"
+        android:label="Add Module Assessment" >
+        <action
+            android:id="@+id/action_addModuleAssessmentFragment_to_assessmentListFragment"
+            app:destination="@id/assessmentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAssessmentDetailsFragment"
+        android:name="com.example.my_module_wallet.features.assessment.ui.ViewAssessmentDetailsFragment"
+        android:label="View Assessment Details" >
+        <action
+            android:id="@+id/action_viewAssessmentDetailsFragment_to_editModuleAssessmentFragment"
+            app:destination="@id/editModuleAssessmentFragment" />
+        <action
+            android:id="@+id/action_viewAssessmentDetailsFragment_to_assessmentListFragment"
+            app:destination="@id/assessmentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editModuleAssessmentFragment"
+        android:name="com.example.my_module_wallet.features.assessment.ui.EditModuleAssessmentFragment"
+        android:label="Edit Module Assessment"
+        tools:layout="@layout/fragment_edit_module_assessment" >
+        <action
+            android:id="@+id/action_editModuleAssessmentFragment_to_viewAssessmentDetailsFragment"
+            app:destination="@id/viewAssessmentDetailsFragment" />
+    </fragment>
+</navigation>
